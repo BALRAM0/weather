@@ -27,7 +27,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build Docker image
-      run: docker build -t docker balram21/weather:$(date +%s) .
+      run: docker build -t balram21/weather:$(date +%s) .
 
     - name: Push Docker image
       run: docker push balram21/weather:$(date +%s)
