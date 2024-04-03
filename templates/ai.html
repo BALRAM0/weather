@@ -1,0 +1,91 @@
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"href="{% static 'css/styleai.css' %}">
+    <title>FORECAST AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+<body>
+
+
+    <video autoplay muted loop id="myVideo">
+        <source src="{% static 'images\abc.mp4' %}" type="video/mp4">
+      </video>
+        <div class='animated-background'>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark " style="border-radius: 30px;">
+                <lord-icon
+                src="https://cdn.lordicon.com/qtiwxsuo.json"
+                trigger="loop"
+                colors="primary:#4be1ec,secondary:#cb5eee"
+                style="width:50px;height:50px">
+                </lord-icon> 
+                <a class="navbar-brand" href="main">FORECAST</a>
+                    
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="\main">Home</a>
+                    </li>
+                        <a class="nav-link" href="ai">Try AI</a>
+                        <a class="nav-link" href="about">About Us</a>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+             <div class="row">
+                <div class="col-4">
+                    <div class='st' style="height:auto ">
+                        <h1 style="font-size:25px">HOW IT WORKS ?</h1>
+                        <ul>
+                            <li>Select an Image</li>
+                            <li>Upload the Image in server</li>
+                            <li>Sucesfull Upload Redirect To result</li>
+                            <li>NOTE :</li>
+                            <li>Some times doesnt provide correct data</li>
+                       
+                        
+                    
+                     
+                </div>
+                </div>
+            </div>
+         
+
+
+             
+
+        <div class='row'>
+            <div class="content">
+                
+                <h2> FORECAST   AI</h2>
+                <div class="drop_box">
+                    <header>
+                        <h2>Select Files Here</h2>
+                    </header>
+                    <p>Files Supported: JPG, TIFF, PNG , JPEG</p>
+                    <form action="{% url 'ai' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" name="fileToUpload" id="fileToUpload" class='btn' style="color:red">
+                        <input type="submit" value="Upload File" name="submit" class='btn'>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+      
+
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
